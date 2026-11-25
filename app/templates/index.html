@@ -39,6 +39,29 @@
         </div>
       </div>
     </article>
+    <article class="panel agent-panel" id="panel-agent-delivery">
+      <div class="panel-head"><h2>代理凭证交付</h2><span class="hint">按代理过滤已签发款并生成可撤回链接</span></div>
+      <div class="agent-delivery">
+        <div class="agent-form-row">
+          <label for="delivery-agent">代理编号（留空则按代理分组）</label>
+          <input id="delivery-agent" type="text" placeholder="A1">
+          <label for="delivery-batch">批次号</label>
+          <input id="delivery-batch" type="text" placeholder="BATCH-20261125">
+        </div>
+        <label for="delivery-payments">款项 JSON</label>
+        <textarea id="delivery-payments" spellcheck="false">[
+  {"payment_id":"P1001","agent_id":"A1","ticket_id":"T-SHARED","passenger_id":"P1","amount_cents":12000,"status":"ISSUED"},
+  {"payment_id":"P1002","agent_id":"A2","ticket_id":"T-SHARED","passenger_id":"P1","amount_cents":8000,"status":"ISSUED"},
+  {"payment_id":"P1003","agent_id":"A1","amount_cents":500,"status":"PENDING"},
+  {"payment_id":"P1004","agent_id":null,"ticket_id":"OLD-1","amount_cents":9999,"status":"ISSUED"}
+]</textarea>
+        <div class="review-actions">
+          <button id="agent-issue" type="button">生成凭证链接</button>
+          <button id="agent-revoke" class="danger" type="button">撤回代理权限</button>
+        </div>
+        <div id="agent-delivery-result" class="agent-result" aria-live="polite"></div>
+      </div>
+    </article>
   </section>
 </main>
 {% endblock %}

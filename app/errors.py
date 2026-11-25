@@ -18,6 +18,10 @@ MESSAGES = {
     "GATE_BLOCKED": "存在阻断项，不能签发",
     "NOT_APPROVED": "批次尚未签发",
     "BAD_REQUEST": "请求内容不完整",
+    "AGENT_NOT_FOUND": "代理不存在",
+    "AGENT_PERMISSION_REVOKED": "代理权限已撤回，链接已停止下载",
+    "LINK_NOT_FOUND": "下载链接不存在",
+    "LINK_REVOKED": "下载链接已失效",
 }
 
 

@@ -25,7 +25,13 @@ def catalog():
                        ["intake", "prepare", "calculate", "decision", "reconcile", "review", "evidence"],
                        SPEC["stages"])],
                    chart=SPEC["chart"], result_columns=SPEC["result_columns"],
-                   columns=SPEC["columns"], samples=["dirty", "clean"])
+                   columns=SPEC["columns"], samples=["dirty", "clean"],
+                   agent_delivery={
+                       "create": "/api/agent-vouchers",
+                       "agent_create": "/api/agents/{agent_id}/vouchers",
+                       "download": "/api/agent-vouchers/{token}/download",
+                       "revoke_agent": "/api/agents/{agent_id}/revoke",
+                   })
 
 
 @api.post("/api/stages/<stage_id>")

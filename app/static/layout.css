@@ -10,6 +10,18 @@
 .p0850 .panel{border:1px dashed var(--line);border-radius:var(--radius);padding:18px}
 .p0850 .metric{border:1px dashed var(--line);border-radius:var(--radius);background:transparent}
 .p0850 .metric strong{font-size:clamp(24px,3.2vw,45px)}
+.p0850 #panel-agent-delivery{grid-column:1 / -1}
+.agent-delivery{display:grid;gap:10px}
+.agent-form-row{display:grid;grid-template-columns:minmax(160px,.6fr) minmax(220px,1.4fr);gap:10px;align-items:end}
+.agent-form-row label{display:grid;gap:5px}
+.agent-delivery textarea{width:100%;min-height:190px;resize:vertical;font-family:var(--num)}
+.agent-result{display:grid;gap:10px}
+.agent-voucher-card{border:1px dashed var(--line);border-radius:var(--radius);padding:10px}
+.agent-link{margin-top:8px;word-break:break-all}
+.agent-link a{color:var(--accent)}
+.p0850 button.danger{border-color:#a33b3b;color:#8f2424}
+.p0850 button.danger:hover{background:#8f2424;color:#fff;border-color:#8f2424}
+@media (max-width:680px){.agent-form-row{grid-template-columns:1fr}}
 
 @media (max-width: 980px) {
   .p0850 .board { grid-template-columns: minmax(0,1fr) !important; grid-template-areas: none !important; }

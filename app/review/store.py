@@ -1,22 +1,13 @@
 import json
-import sqlite3
 import uuid
 from datetime import datetime, timezone
-from pathlib import Path
+
+from app.agent_delivery.store import AgentDeliveryStore
 
 
-class Store:
-    def __init__(self, path):
-        self.path = Path(path)
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.init()
-
-    def connect(self):
-        connection = sqlite3.connect(self.path, timeout=8)
-        connection.row_factory = sqlite3.Row
-        return connection
-
+class Store(AgentDeliveryStore):
     def init(self):
+        super().init()
         with self.connect() as db:
             db.executescript('''
             CREATE TABLE IF NOT EXISTS runs(
